@@ -13,21 +13,21 @@ var objects;
             this.height = this.image.getBounds().height;
 			
 			//change to multiply instead of divide
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
+            this.image.regX = this.width * 0.5;
+            this.image.regY = this.height * 0.5;
             this.reset();
 			
 			
 			//change to x
-            this.dy = 5;
+            this.dx = 5;
 
             game.addChild(this.image);
         }
         Hay.prototype.update = function () {
 			
 			//change to negative width (x)
-            this.image.y += this.dy;
-            if (this.image.y > this.stage.canvas.height + this.height) {
+            this.image.x += this.dx;
+            if (this.image.x > this.stage.canvas.width + this.width) {
                 this.reset();
             }
         };
@@ -35,10 +35,10 @@ var objects;
         Hay.prototype.reset = function () {
 			
 			//change to height (y)
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
+            this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
 			
 			//change to width (x)
-            this.image.y = -this.height;
+            this.image.x = -this.width;
         };
 
         Hay.prototype.destroy = function () {
