@@ -22,11 +22,11 @@ var objects;
             game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
-        Plane.prototype.update = function () {
+        Horse.prototype.update = function () {
 			//change to y instead of x
             this.image.x = this.stage.mouseX;
         };
-        Plane.prototype.destroy = function () {
+        Horse.prototype.destroy = function () {
             this.engineSound.stop();
             game.removeChild(this.image);
         };
