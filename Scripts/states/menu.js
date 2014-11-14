@@ -12,7 +12,7 @@ var states;
         stage.removeChild(game);
 		
 		//change plane to horse
-        plane.destroy();
+        horse.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
@@ -21,6 +21,10 @@ var states;
     states.playButtonClicked = playButtonClicked;
 
     function menuState() {
+		
+		//insert game instructions here
+		
+		
 		
 		field.update();
 		horse.update();
@@ -47,12 +51,12 @@ var states;
 		
 		//change divide to multiply .5
 		//change mail pilot
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "HORSE JUMP");
+        gameNameLabel = new objects.Label(stage.canvas.width * 0.5, 40, "HORSE JUMP");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
 		//change divide to multiply .5
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width * 0.5, 300, "playButton");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 
