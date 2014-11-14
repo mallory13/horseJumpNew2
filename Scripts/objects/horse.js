@@ -11,20 +11,20 @@ var objects;
             this.game = game;
             this.image = new createjs.Sprite(managers.Assets.atlas, "horse");
 			
-			//change 430 to side scroller
+			//change 430 to side scroller/ change to x
             this.image.y = 430;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
 			
 			//change to multiply by .5 instead of divide by 2
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
+            this.image.regX = this.width * 0.5;
+            this.image.regY = this.height * 0.5;
             game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
         Horse.prototype.update = function () {
 			//change to y instead of x
-            this.image.x = this.stage.mouseX;
+            this.image.y = this.stage.mouseY;
         };
         Horse.prototype.destroy = function () {
             this.engineSound.stop();
