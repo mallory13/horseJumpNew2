@@ -11,7 +11,7 @@ var states;
     function gameOverState() {
 		
 		//field.update();
-        ocean.update();
+        field.update();
     }
     states.gameOverState = gameOverState;
 
@@ -35,7 +35,7 @@ var states;
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
+        field = new objects.Field(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
