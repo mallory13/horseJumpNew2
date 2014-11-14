@@ -26,10 +26,10 @@
             [230, 144, 211, 69]
         ],
         "animations": {
-            "fence": [0],
+            "cloud": [0],
             "instructionsButton": [1],
-            "hay": [2],
-            "horse": [3],
+            "island": [2],
+            "plane": [3],
             "playButton": [4],
             "tryAgainButton": [5]
         }
