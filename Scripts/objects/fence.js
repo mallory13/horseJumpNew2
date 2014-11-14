@@ -37,4 +37,4 @@ var objects;
     })();
     objects.Fence = Fence;
 })(objects || (objects = {}));
-//# sourceMappingURL=cloud.js.map
+//# sourceMappingURL=fence.js.map

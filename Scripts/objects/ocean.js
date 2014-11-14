@@ -1,14 +1,14 @@
 ﻿/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Ocean Class
+    // Field Class
 	
 	//change ocean to field
-    var Ocean = (function () {
-        function Ocean(stage, game) {
+    var Field = (function () {
+        function Field(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("ocean"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("field"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
@@ -21,7 +21,7 @@ var objects;
 		
 		//change ocean to field
 		//change y to x
-        Ocean.prototype.update = function () {
+        Field.prototype.update = function () {
             this.image.y += this.dy;
             if (this.image.y >= 0) {
                 this.reset();
@@ -31,18 +31,18 @@ var objects;
 		
 		//change ocean to field
 		//change y to x
-        Ocean.prototype.reset = function () {
+        Field.prototype.reset = function () {
             this.image.y = -960;
         };
 
 		//change ocean to field
-        Ocean.prototype.destroy = function () {
+        Field.prototype.destroy = function () {
             game.removeChild(this.image);
         };
 		
 		//change ocean to field
-        return Ocean;
+        return Field;
     })();
-    objects.Ocean = Ocean;
+    objects.Field = Field;
 })(objects || (objects = {}));
 //# sourceMappingURL=ocean.js.map

@@ -1,15 +1,15 @@
 ﻿/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Plane Class
+    // Horse Class
 	
 	
 	//change plane to horse
-    var Plane = (function () {
-        function Plane(stage, game) {
+    var Horse = (function () {
+        function Horse(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "horse");
 			
 			//change 430 to side scroller
             this.image.y = 430;
@@ -22,18 +22,18 @@ var objects;
             game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
-        Plane.prototype.update = function () {
+        Horse.prototype.update = function () {
 			//change to y instead of x
             this.image.x = this.stage.mouseX;
         };
-        Plane.prototype.destroy = function () {
+        Horse.prototype.destroy = function () {
             this.engineSound.stop();
             game.removeChild(this.image);
         };
 		
 		//change plane to horse
-        return Plane;
+        return Horse;
     })();
-    objects.Plane = Plane;
+    objects.Horse = Horse;
 })(objects || (objects = {}));
 //# sourceMappingURL=plane.js.map

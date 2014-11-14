@@ -1,14 +1,14 @@
 ﻿/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Island Class
+    // Hay Class
 	
-	//change island to hay?
-    var Island = (function () {
-        function Island(stage, game) {
+	//change island to hay
+    var Hay = (function () {
+        function Hay(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "island");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "hay");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
 			
@@ -23,7 +23,7 @@ var objects;
 
             game.addChild(this.image);
         }
-        Island.prototype.update = function () {
+        Hay.prototype.update = function () {
 			
 			//change to negative width (x)
             this.image.y += this.dy;
@@ -32,7 +32,7 @@ var objects;
             }
         };
 
-        Island.prototype.reset = function () {
+        Hay.prototype.reset = function () {
 			
 			//change to height (y)
             this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
@@ -41,11 +41,11 @@ var objects;
             this.image.y = -this.height;
         };
 
-        Island.prototype.destroy = function () {
+        Hay.prototype.destroy = function () {
             game.removeChild(this.image);
         };
-        return Island;
+        return Hay;
     })();
-    objects.Island = Island;
+    objects.Hay = Hay;
 })(objects || (objects = {}));
 //# sourceMappingURL=island.js.map
