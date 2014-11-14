@@ -11,17 +11,17 @@ var states;
     function playState() {
 		
 		//replace ocean with field
-        ocean.update();
+        field.update();
 		
 		//replace island with hay
-        island.update();
+        hay.update();
 		
 		//replace plane with horse
-        plane.update();
+        horse.update();
 		
 		//replace cloud with fence
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count].update();
+        for (var count = 0; count < constants.FENCE_NUM; count++) {
+            fences[count].update();
         }
 
         collision.update();
@@ -31,7 +31,7 @@ var states;
             stage.removeChild(game);
 			
 			//change plane to horse
-            plane.destroy();
+            horse.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
@@ -47,24 +47,24 @@ var states;
 
         // Instantiate Game Objects
 		//replace ocean with field, island with hay, plane with horse
-        ocean = new objects.Ocean(stage, game);
-        island = new objects.Island(stage, game);
-        plane = new objects.Plane(stage, game);
+        field = new objects.Field(stage, game);
+        hay = new objects.Hay(stage, game);
+        horse = new objects.Horse(stage, game);
 
         // Show Cursor
         stage.cursor = "none";
 		
 		
 		//replace clouds with fence
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count] = new objects.Cloud(stage, game);
+        for (var count = 0; count < constants.FENCE_NUM; count++) {
+            fences[count] = new objects.Fence(stage, game);
         }
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(plane, island, clouds, scoreboard);
+        collision = new managers.Collision(horse, hay, fences, scoreboard);
 
         stage.addChild(game);
     }
