@@ -14,7 +14,7 @@ var objects;
             this.reset();
 
 			//change to dx
-            this.dy = 5;
+            this.dx = 5;
 
             game.addChild(this.image);
         }
@@ -22,17 +22,18 @@ var objects;
 		//change ocean to field
 		//change y to x
         Field.prototype.update = function () {
-            this.image.y += this.dy;
-            if (this.image.y >= 0) {
+            this.image.x += this.dyx;
+            if (this.image.x >= 0) {
                 this.reset();
             }
         };
 
 		
-		//change ocean to field
-		//change y to x
+		
         Field.prototype.reset = function () {
-            this.image.y = -960;
+			
+			//change the number to negative width (640?)
+            this.image.x = -960;
         };
 
 		//change ocean to field
