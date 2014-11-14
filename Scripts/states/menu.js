@@ -22,10 +22,9 @@ var states;
 
     function menuState() {
 		
-		//field.update();
-		//horse.update();
-        ocean.update();
-        plane.update();
+		field.update();
+		horse.update();
+        
     }
     states.menuState = menuState;
 
@@ -38,8 +37,8 @@ var states;
         // Instantiate Game Objects
 		//replace ocean with field
 		//replace plane with horse
-        ocean = new objects.Ocean(stage, game);
-        plane = new objects.Plane(stage, game);
+        field = new objects.Field(stage, game);
+        horse = new objects.Horse(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
@@ -48,7 +47,7 @@ var states;
 		
 		//change divide to multiply .5
 		//change mail pilot
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "HORSE JUMP");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
