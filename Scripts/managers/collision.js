@@ -6,11 +6,11 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, island, clouds, scoreboard) {
-            this.clouds = [];
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        function Collision(horse, hay, fence, scoreboard) {
+            this.fence = [];
+            this.horse = horse;
+            this.hay = hay;
+            this.fence = fence;
             this.scoreboard = scoreboard;
         }
         // Utility method - Distance calculation between two points
@@ -31,36 +31,38 @@ var managers;
         };
 
         // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        Collision.prototype.planeAndCloud = function (fence) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            p1.x = this.horse.image.x;
+            p1.y = this.horse.image.y;
+            p2.x = fence.image.x;
+            p2.y = fence.image.y;
+			
+			//change to *0.5
+            if (this.distance(p1, p2) < ((this.horse.height / 2) + (fence.height / 2))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                fence.reset();
             }
         };
 
         // check collision between plane and island
 		//change plane and island to horse and fence
-        Collision.prototype.planeAndIsland = function () {
+        Collision.prototype.horseAndHay = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
-            p2.x = this.island.image.x;
-            p2.y = this.island.image.y;
+            p1.x = this.horse.image.x;
+            p1.y = this.horse.image.y;
+            p2.x = this.hay.image.x;
+            p2.y = this.hay.image.y;
 			
 			//change to multiply *0.5
 			//change plane and island to horse and hay
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            if (this.distance(p1, p2) < ((this.horse.height / 2) + (this.hay.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
-                this.island.reset();
+                this.hay.reset();
             }
         };
 
@@ -68,10 +70,10 @@ var managers;
 		//change plane and island to horse and fence
 		//change cloud to fence
         Collision.prototype.update = function () {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+            for (var count = 0; count < constants.FENCE_NUM; count++) {
+                this.horseAndFence(this.fence[count]);
             }
-            this.planeAndIsland();
+            this.horseAndHay();
         };
         return Collision;
     })();
