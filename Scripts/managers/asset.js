@@ -7,8 +7,11 @@
 	//add horse image
 	//add fence image
 	//add different sound
+		{ id: "horse", src: "assets/images/horse.png" },
+		{ id: "hay", src: "assets/images/hay.png" },
+		{ id: "fence", src: "assets/images/fence.png" },
         { id: "loading", src: "assets/images/loading.jpg" },
-        { id: "ocean", src: "assets/images/field.jpg" },
+        { id: "field", src: "assets/images/field.jpg" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }
