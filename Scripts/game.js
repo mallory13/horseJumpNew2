@@ -71,6 +71,13 @@ function changeState(state) {
             states.menu();
             break;
 
+			case constants.INSTRUCTIONS_STATE:
+            currentStateFunction = states.instructionsState;
+
+            // instantiate instructions screen
+            states.instructions();
+            break;
+			
         case constants.PLAY_STATE:
             // instantiate play screen
             currentStateFunction = states.playState;

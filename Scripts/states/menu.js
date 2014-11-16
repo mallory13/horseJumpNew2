@@ -7,18 +7,27 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 var states;
+var instructionsText;
 
 (function (states) {
     function instructionsButtonClicked(event) {
         stage.removeChild(game);
 		
-		//change plane to horse
         horse.destroy();
 		soundtrack.stop();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.INSTRUCTIONS_STATE;
         changeState(currentState);
+		
+		instructionsText = new createjs.Text ("Your goal is to gain points to help your horse survive. When your horse eats ha you gain points.
+		When your horse runs into fences you lose points.", constants.GAME_FONT, constants.GAME_COLOR);
+		instructionsText.regX = instructionsText.getBounds().width * 0.5;
+		instructionsText.regY = instructionsText.getBounds().height * 0.5;
+		instructionsText.x = stage.canvas.width * 0.5;
+		instructionsText.y = stage.canvas.height * 0.5;
+		game.addChild(instructionsText);
+		 
     }
     states.instructionsButtonClicked = instructionButtonClicked;
 	
