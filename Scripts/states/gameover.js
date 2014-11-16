@@ -41,19 +41,19 @@ var states;
         stage.cursor = "default";
 
         // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        gameOverLabel = new objects.Label(stage.canvas.width * 0.5, 40, "GAME OVER");
         game.addChild(gameOverLabel);
 
         // Display Final Score Label
-        finalScoreLabel = new objects.Label(stage.canvas.width / 2, 120, "FINAL SCORE");
+        finalScoreLabel = new objects.Label(stage.canvas.width * 0.5, 120, "FINAL SCORE");
         game.addChild(finalScoreLabel);
 
         // Display Final Score
-        finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
+        finalScore = new objects.Label(stage.canvas.width * 0.5, 160, scoreboard.score.toString());
         game.addChild(finalScore);
 
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "tryAgainButton");
+        tryAgain = new objects.Button(stage.canvas.width * 0.5, 300, "tryAgainButton");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
 

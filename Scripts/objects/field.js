@@ -32,8 +32,8 @@ var objects;
 		
         Field.prototype.reset = function () {
 			
-			//change the number to negative width (640?)
-            this.image.x = -960;
+			//change the number to negative width (640)
+            this.image.x = -640;
         };
 
 		//change ocean to field

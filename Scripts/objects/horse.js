@@ -20,14 +20,14 @@ var objects;
             this.image.regX = this.width * 0.5;
             this.image.regY = this.height * 0.5;
             game.addChild(this.image);
-            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            this.horseSound = createjs.Sound.play('horse', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
         Horse.prototype.update = function () {
 			//change to y instead of x
             this.image.y = this.stage.mouseY;
         };
         Horse.prototype.destroy = function () {
-            this.engineSound.stop();
+            this.horseSound.stop();
             game.removeChild(this.image);
         };
 		

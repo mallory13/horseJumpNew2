@@ -41,7 +41,7 @@ var managers;
 			
 			//change to *0.5
             if (this.distance(p1, p2) < ((this.horse.height * 0.5) + (fence.height * 0.5))) {
-                createjs.Sound.play("thunder");
+                createjs.Sound.play("fence");
                 this.scoreboard.lives -= 1;
                 fence.reset();
             }
@@ -59,8 +59,8 @@ var managers;
 			
 			//change to multiply *0.5
 			//change plane and island to horse and hay
-            if (this.distance(p1, p2) < ((this.horse.height * 0.5) + (this.hay.height * 0.5))) {
-                createjs.Sound.play("yay");
+            if (this.distance(p1, p2) < ((this.horse.width * 0.5) + (this.hay.width * 0.5))) {
+                createjs.Sound.play("hay");
                 this.scoreboard.score += 100;
                 this.hay.reset();
             }

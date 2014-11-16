@@ -12,9 +12,9 @@
 		{ id: "fence", src: "assets/images/fence.png" },
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "field", src: "assets/images/field.jpg" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "horse", src: "assets/sounds/horse.ogg" },
+        { id: "fence", src: "assets/sounds/fence.ogg" },
+        { id: "hay", src: "assets/sounds/hay.ogg" }
     ];
 
     // SpriteSheet Data Object
