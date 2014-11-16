@@ -7,7 +7,23 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 var states;
+
 (function (states) {
+    function instructionsButtonClicked(event) {
+        stage.removeChild(game);
+		
+		//change plane to horse
+        horse.destroy();
+		soundtrack.stop();
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        currentState = constants.INSTRUCTIONS_STATE;
+        changeState(currentState);
+    }
+    states.instructionsButtonClicked = instructionButtonClicked;
+	
+	
+
     function playButtonClicked(event) {
         stage.removeChild(game);
 		
@@ -21,11 +37,6 @@ var states;
     states.playButtonClicked = playButtonClicked;
 
     function menuState() {
-		
-		//insert game instructions here
-		
-		
-		
 		field.update();
 		horse.update();
         
@@ -34,16 +45,14 @@ var states;
 
     function menu() {
         var gameNameLabel;
-
+		
         // Declare new Game Container
         game = new createjs.Container();
 
         // Instantiate Game Objects
-		//replace ocean with field
-		//replace plane with horse
+		
         field = new objects.Field(stage, game);
         horse = new objects.Horse(stage, game);
-
         // Show Cursor
         stage.cursor = "default";
 
